@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "iamges.pexels.com",
+        hostname: "api.slingacademy.com",
       },
     ],
   },

@@ -62,7 +62,19 @@ const tenants = [
 export default function AppSidebar() {
   const pathname = usePathname();
   const { isOpen } = useMediaQuery();
-  const { user } = useUser();
+  //const { user } = useUser();
+  type userProp = {
+    imageUrl?: string;
+    fullName?: string | null;
+    emailAddresses: Array<{
+      emailAddress: string;
+    }>;
+  };
+  const user: userProp = {
+    imageUrl: "/avatat.png",
+    fullName: "lixubo",
+    emailAddresses: [{ emailAddress: "2590903665@qq.com" }],
+  };
   const router = useRouter();
   const handleSwitchTenant = (_tenantId: string) => {
     // Tenant switching functionality would be implemented here

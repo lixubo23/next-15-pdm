@@ -9,16 +9,22 @@ export type Product = {
   category: string;
   updated_at: string;
 };
+export type PoyDeviceList = {
+  id: number;
+  mcNo: string;
+  side: string;
+  IsStop: boolean;
+};
 //Info: The following data is used for the sidebar navigation and Cmd K bar.
 export const navItems: NavItem[] = [
-  {
-    title: "Dashboard",
-    url: "/dashboard/overview",
-    icon: "dashboard",
-    isActive: false,
-    shortcut: ["d", "d"],
-    items: [], // Empty array as there are no child items for Dashboard
-  },
+  // {
+  //   title: "Dashboard",
+  //   url: "/dashboard/overview",
+  //   icon: "dashboard",
+  //   isActive: false,
+  //   shortcut: ["d", "d"],
+  //   items: [], // Empty array as there are no child items for Dashboard
+  // },
   {
     title: "Product",
     url: "/dashboard/product",
@@ -28,34 +34,186 @@ export const navItems: NavItem[] = [
     items: [], // No child items
   },
   {
-    title: "Account",
-    url: "#", // Placeholder as there is no direct link for the parent
+    title: "POY停止供给设定",
+    url: "/dashboard/poystop",
     icon: "billing",
-    isActive: true,
-
-    items: [
-      {
-        title: "Profile",
-        url: "/dashboard/profile",
-        icon: "userPen",
-        shortcut: ["m", "m"],
-      },
-      {
-        title: "Login",
-        shortcut: ["l", "l"],
-        url: "/",
-        icon: "login",
-      },
-    ],
-  },
-  {
-    title: "Kanban",
-    url: "/dashboard/kanban",
-    icon: "kanban",
-    shortcut: ["k", "k"],
+    shortcut: ["p", "p"],
     isActive: false,
     items: [], // No child items
   },
+  {
+    title: "POY批次设定",
+    url: "#",
+    icon: "billing",
+    shortcut: ["p", "p"],
+    isActive: false,
+    items: [], // No child items
+  },
+  {
+    title: "CR运行状态显示",
+    url: "#",
+    icon: "billing",
+    shortcut: ["p", "p"],
+    isActive: false,
+    items: [], // No child items
+  },
+  {
+    title: "PS运行状态显示 ",
+    url: "#",
+    icon: "billing",
+    shortcut: ["p", "p"],
+    isActive: false,
+    items: [], // No child items
+  },
+  {
+    title: "PS POY详细信息",
+    url: "#",
+    icon: "billing",
+    shortcut: ["p", "p"],
+    isActive: false,
+    items: [], // No child items
+  },
+  {
+    title: "原丝架 POY详细信息",
+    url: "#",
+    icon: "billing",
+    shortcut: ["p", "p"],
+    isActive: false,
+    items: [], // No child items
+  },
+  {
+    title: "原丝架 运行状况",
+    url: "#",
+    icon: "billing",
+    shortcut: ["p", "p"],
+    isActive: false,
+    items: [], // No child items
+  },
+  {
+    title: "CR POY供给履历",
+    url: "#",
+    icon: "billing",
+    shortcut: ["p", "p"],
+    isActive: false,
+    items: [], // No child items
+  },
+  {
+    title: "CR POY供给成功率  ",
+    url: "#",
+    icon: "billing",
+    shortcut: ["p", "p"],
+    isActive: false,
+    items: [], // No child items
+  },
+  {
+    title: "CR POY供给失败履历 ",
+    url: "#",
+    icon: "billing",
+    shortcut: ["p", "p"],
+    isActive: false,
+    items: [], // No child items
+  },
+  {
+    title: "CR 报警履历 ",
+    url: "#",
+    icon: "billing",
+    shortcut: ["p", "p"],
+    isActive: false,
+    items: [], // No child items
+  },
+  {
+    title: "PS POY取丝履历 ",
+    url: "#",
+    icon: "billing",
+    shortcut: ["p", "p"],
+    isActive: false,
+    items: [], // No child items
+  },
+  {
+    title: "PS POY取丝成功率",
+    url: "#",
+    icon: "billing",
+    shortcut: ["p", "p"],
+    isActive: false,
+    items: [], // No child items
+  },
+  {
+    title: "PS POY取丝失败履历",
+    url: "#",
+    icon: "billing",
+    shortcut: ["p", "p"],
+    isActive: false,
+    items: [], // No child items
+  },
+  {
+    title: "PS 报警履历 ",
+    url: "#",
+    icon: "billing",
+    shortcut: ["p", "p"],
+    isActive: false,
+    items: [], // No child items
+  },
+  {
+    title: "POY 数据 ",
+    url: "#",
+    icon: "billing",
+    shortcut: ["p", "p"],
+    isActive: false,
+    items: [], // No child items
+  },
+  {
+    title: "POY-DTY 数据 ",
+    url: "#",
+    icon: "billing",
+    shortcut: ["p", "p"],
+    isActive: false,
+    items: [], // No child items
+  },
+  {
+    title: "是否启用小卷 ",
+    url: "#",
+    icon: "billing",
+    shortcut: ["p", "p"],
+    isActive: false,
+    items: [], // No child items
+  },
+  {
+    title: "DTY移栽强制完成",
+    url: "#",
+    icon: "billing",
+    shortcut: ["p", "p"],
+    isActive: false,
+    items: [], // No child items
+  },
+  // {
+  //   title: "Account",
+  //   url: "#", // Placeholder as there is no direct link for the parent
+  //   icon: "billing",
+  //   isActive: true,
+
+  //   items: [
+  //     {
+  //       title: "Profile",
+  //       url: "/dashboard/profile",
+  //       icon: "userPen",
+  //       shortcut: ["m", "m"],
+  //     },
+  //     {
+  //       title: "Login",
+  //       shortcut: ["l", "l"],
+  //       url: "/",
+  //       icon: "login",
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: "Kanban",
+  //   url: "/dashboard/kanban",
+  //   icon: "kanban",
+  //   shortcut: ["k", "k"],
+  //   isActive: false,
+  //   items: [], // No child items
+  // },
 ];
 
 export interface SaleUser {

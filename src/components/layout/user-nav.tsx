@@ -13,7 +13,19 @@ import { UserAvatarProfile } from "@/components/user-avatar-profile";
 import { SignOutButton, useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 export function UserNav() {
-  const { user } = useUser();
+  // const { user } = useUser();
+  type userProp = {
+    imageUrl?: string;
+    fullName?: string | null;
+    emailAddresses: Array<{
+      emailAddress: string;
+    }>;
+  };
+  const user: userProp = {
+    imageUrl: "/avatat.png",
+    fullName: "lixubo",
+    emailAddresses: [{ emailAddress: "2590903665@qq.com" }],
+  };
   const router = useRouter();
   if (user) {
     return (
